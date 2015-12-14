@@ -4,10 +4,18 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+<<<<<<< HEAD
 <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Master text 2"
+=======
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Branch Text"
+>>>>>>> refs/remotes/origin/VerzendenSMS
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
