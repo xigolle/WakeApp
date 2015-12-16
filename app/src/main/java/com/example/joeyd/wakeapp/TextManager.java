@@ -34,8 +34,11 @@ public class TextManager extends BroadcastReceiver{
         try{
             sms.sendTextMessage(number, null, text+secretAppCode, null, null);
             Toast toast = Toast.makeText(context,"SMS verstuurd",Toast.LENGTH_SHORT);
+            toast.show();
+
         }catch (Exception e){
             Toast toast = Toast.makeText(context,e.getMessage(),Toast.LENGTH_LONG);
+            toast.show();
         }
 
     }
