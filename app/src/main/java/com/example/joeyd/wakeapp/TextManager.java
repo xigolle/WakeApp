@@ -32,7 +32,7 @@ public class TextManager extends BroadcastReceiver{
         //send SMS to the phone number with specified Text
         String secretAppCode = "#WakeApp";
         try{
-            sms.sendTextMessage(number, null, text+secretAppCode, null, null);
+            sms.sendTextMessage(number, null, text+" "+secretAppCode, null, null);
             Toast toast = Toast.makeText(context,"SMS verstuurd",Toast.LENGTH_SHORT);
             toast.show();
 
