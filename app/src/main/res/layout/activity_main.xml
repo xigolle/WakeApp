@@ -8,6 +8,7 @@
 <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="Master text 2"
 =======
 
@@ -16,6 +17,9 @@
         android:layout_height="wrap_content"
         android:text="Branch Text"
 >>>>>>> refs/remotes/origin/VerzendenSMS
+=======
+        android:text="Master text 3"
+>>>>>>> origin/master
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
