@@ -12,7 +12,6 @@ import android.os.Bundle;
  */
 
 
-//second test 
 public class accelerometerManager implements SensorEventListener {
     private SensorManager senSensorManager;
     private Sensor senAccelerometer;
