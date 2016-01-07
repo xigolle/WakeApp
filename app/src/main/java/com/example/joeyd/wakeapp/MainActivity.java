@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity /* implements SensorEventLis
     static  final int TIMEPICKER_DIALOG_ID = 1;
     int year, month, day, hour, minute;
     Context context;
+    public static MainActivity instance = null;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +45,10 @@ public class MainActivity extends AppCompatActivity /* implements SensorEventLis
         //TextManager.Send("0487174475","testing",this);
 
         accelerometer = new accelerometerManager(this.getApplicationContext(), this);
+        context = this.getApplicationContext();
 
-        //getTime.execute();
+
+        instance = this;
         final Calendar cal = Calendar.getInstance();
 
         //datum van notificatie

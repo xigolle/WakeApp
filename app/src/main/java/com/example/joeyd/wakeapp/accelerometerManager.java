@@ -60,7 +60,6 @@ public class accelerometerManager implements SensorEventListener {
                     yText.setText("y: " + String.valueOf(y));
                     zText.setText("z: " + String.valueOf(z));
                     if (!awake){
-                        //TextManager.Send("0478057618", "Ik ben wakker", context);
                         awake = true;
                     }
                 }

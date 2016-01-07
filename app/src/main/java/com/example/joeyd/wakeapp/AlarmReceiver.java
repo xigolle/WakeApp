@@ -20,9 +20,15 @@ public class AlarmReceiver extends BroadcastReceiver {
     }
 
     protected void wakeMethod() {
-        accelerometerManager accelerometer = new accelerometerManager(context, (Activity)context);
-        if (!accelerometer.awake) {
+
+        // accelerometerManager accelerometer = new accelerometerManager(context, MainActivity.instance);
+
+        if (!MainActivity.instance.accelerometer.awake) {
             TextManager.Send("0478057618", "wake me up", context);
+            Toast.makeText(context, "Rise and shine!", Toast.LENGTH_LONG).show();
+        }
+        else if (MainActivity.instance.accelerometer.awake) {
+            Toast.makeText(context, "You are awake, did you sleep well?", Toast.LENGTH_LONG).show();
         }
     }
 }
