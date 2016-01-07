@@ -23,7 +23,7 @@ public class accelerometerManager implements SensorEventListener {
     private long lastUpdate = 0;
     private float last_x, last_y, last_z;
     private static final int SHAKE_THRESHOLD = 100;
-    private boolean smsSend = false;
+    public boolean awake = false;
 
     public accelerometerManager(Context context, Activity activity) {
 
@@ -59,9 +59,9 @@ public class accelerometerManager implements SensorEventListener {
                     xText.setText("x: " + String.valueOf(x));
                     yText.setText("y: " + String.valueOf(y));
                     zText.setText("z: " + String.valueOf(z));
-                    if (!smsSend){
+                    if (!awake){
                         //TextManager.Send("0478057618", "Ik ben wakker", context);
-                        smsSend = true;
+                        awake = true;
                     }
                 }
 

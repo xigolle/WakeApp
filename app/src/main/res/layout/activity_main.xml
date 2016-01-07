@@ -42,26 +42,22 @@
         android:layout_below="@+id/x"
         android:layout_centerHorizontal="true" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="00:00:00"
-        android:id="@+id/time"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:layout_alignRight="@+id/z"
-        android:layout_alignEnd="@+id/z"
-        android:layout_below="@+id/button" />
+        android:text="Pick time"
+        android:id="@+id/setTime"
+        android:layout_below="@+id/z"
+        android:layout_centerHorizontal="true"
+        android:onClick="setTime"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_below="@+id/z"
-        android:layout_centerHorizontal="true"
-        android:onClick="setTime"/>
+        android:text="Add time"
+        android:id="@+id/addTime"
+        android:layout_below="@+id/setTime"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
