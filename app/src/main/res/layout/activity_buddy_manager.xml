@@ -1,13 +1,37 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.joeyd.wakeapp.BuddyManagerActivity">
+    tools:context="com.example.joeyd.wakeapp.BuddyManagerActivity"
+    android:orientation="vertical">
 
-    <TextView android:text="Show the buddies you selected" android:layout_width="wrap_content"
+    <TextView android:text="Buddy List" android:layout_width="wrap_content"
+        android:textSize="32dp"
         android:layout_height="wrap_content"
-        android:id="@+id/" />
+        android:id="@+id/Showbuddies" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contacts"
+        android:onClick="goToContacts"
 
-</RelativeLayout>
+        android:id="@+id/btnContacts" />
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/buddyList"></ListView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="geen buddies"
+        android:id="@+id/emptylist"
+        android:visibility="gone"
+        android:textSize="32dp"
+        android:gravity="center"
+        />
+
+
+
+</LinearLayout>

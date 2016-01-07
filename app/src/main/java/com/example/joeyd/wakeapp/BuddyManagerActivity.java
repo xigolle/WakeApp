@@ -1,16 +1,40 @@
 package com.example.joeyd.wakeapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BuddyManagerActivity extends AppCompatActivity {
 
+    public static List<ContactUser> buddyList = new ArrayList<ContactUser>();
+    private ListView listView;
+
+    public void goToContacts(View view){
+        Intent intent = new Intent(this,ContactManagerActivity.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buddy_manager);
+        listView = (ListView) findViewById(R.id.buddyList);
+
+
+        BuddyListAdapter adapter = new BuddyListAdapter(this,buddyList);
+
+        listView.setAdapter(adapter);
+        listView.setEmptyView(findViewById(R.id.emptylist));
     }
 
     @Override
