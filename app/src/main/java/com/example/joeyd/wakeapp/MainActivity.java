@@ -1,6 +1,5 @@
 package com.example.joeyd.wakeapp;
 
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -42,5 +41,4 @@ public class MainActivity extends AppCompatActivity /* implements SensorEventLis
 
         return super.onOptionsItemSelected(item);
     }
-
 }

@@ -6,10 +6,14 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
 =======
 
 >>>>>>> parent of f3c4f0b... Added the contact manager
+=======
+<uses-permission android:name="android.permission.READ_CONTACTS"/>
+>>>>>>> parent of 422f4ea... fucked up
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,20 +29,30 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
+<<<<<<< HEAD
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 <<<<<<< HEAD
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+=======
+>>>>>>> parent of 422f4ea... fucked up
 
         </activity>
         <activity
             android:name=".ContactManagerActivity"
             android:label="@string/title_activity_contact_manager" >
+<<<<<<< HEAD
 =======
 >>>>>>> parent of f3c4f0b... Added the contact manager
+=======
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+>>>>>>> parent of 422f4ea... fucked up
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ContactManagerActivity"
