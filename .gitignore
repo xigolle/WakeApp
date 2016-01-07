@@ -6,5 +6,10 @@
 .DS_Store
 /build
 /captures
+<<<<<<< HEAD
 .idea/misc.xml
 app/app.iml
+=======
+.idea/gradle.xml
+.idea/misc.xml
+>>>>>>> refs/remotes/origin/master
