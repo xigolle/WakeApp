@@ -6,7 +6,15 @@
 .DS_Store
 /build
 /captures
-.idea/gradle.xml
+
 .idea/misc.xml
 app/app.iml
+
 .idea/gradle.xml
+.idea/misc.xml
+<<<<<<< HEAD
+app/app.iml
+.idea/gradle.xml
+=======
+
+>>>>>>> Buddy-List

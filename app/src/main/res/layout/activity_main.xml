@@ -43,6 +43,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+<<<<<<< HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pick time"
@@ -58,6 +59,17 @@
         android:id="@+id/addTime"
         android:layout_below="@+id/setTime"
         android:layout_centerHorizontal="true" />
+=======
+        android:onClick="sendMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/ContactList"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/z"
+        android:layout_toStartOf="@+id/z"
+        android:layout_marginBottom="108dp" />
+>>>>>>> Buddy-List
 
 
 </RelativeLayout>

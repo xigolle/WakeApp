@@ -1,5 +1,6 @@
 package com.example.joeyd.wakeapp;
 
+<<<<<<< HEAD
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -9,12 +10,17 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+=======
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+>>>>>>> Buddy-List
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -25,6 +31,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
+=======
+>>>>>>> Buddy-List
 
 public class MainActivity extends AppCompatActivity /* implements SensorEventListener*/ {
 

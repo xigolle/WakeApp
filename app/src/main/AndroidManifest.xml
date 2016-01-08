@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.joeyd.wakeapp" >
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <receiver android:name=".TextManager">
+        <receiver android:name=".TextManager" >
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED">
-
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" >
                 </action>
             </intent-filter>
         </receiver>
+<<<<<<< HEAD
         <receiver android:name=".AlarmReceiver">
             <intent-filter>
                 <action android:name="com.example.joeyd.wakeapp">
@@ -23,14 +26,26 @@
                 </action>
             </intent-filter>
         </receiver>
+=======
+
+>>>>>>> Buddy-List
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
+
+        </activity>
+        <activity
+            android:name=".ContactManagerActivity"
+            android:label="@string/app_name"  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".BuddyManagerActivity"
+            android:label="@string/title_activity_buddy_manager" >
         </activity>
     </application>
 
