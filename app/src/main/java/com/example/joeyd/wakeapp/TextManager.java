@@ -68,6 +68,6 @@ public class TextManager extends BroadcastReceiver{
                 }
             }
         }
-        Toast.makeText(context,"Intent Detected",Toast.LENGTH_LONG).show();
+        //Toast.makeText(context,"Intent Detected",Toast.LENGTH_LONG).show();
     }
 }

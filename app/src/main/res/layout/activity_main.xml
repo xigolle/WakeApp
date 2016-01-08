@@ -42,6 +42,23 @@
         android:layout_below="@+id/x"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick time"
+        android:id="@+id/setTime"
+        android:layout_below="@+id/z"
+        android:layout_centerHorizontal="true"
+        android:onClick="setTime"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add time"
+        android:id="@+id/addTime"
+        android:layout_below="@+id/setTime"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
 
