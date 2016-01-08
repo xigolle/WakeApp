@@ -3,6 +3,7 @@ package com.example.joeyd.wakeapp;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity /* implements SensorEventLis
 
     accelerometerManager accelerometer;
 
-    //TextView timeTxtView;
     Button setTime;
     Button addTime;
     static  final int DATEPICKER_DIALOG_ID = 0;
@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity /* implements SensorEventLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //how to call the send function
-        //TextManager.Send("0487174475","testing",this);
 
         accelerometer = new accelerometerManager(this.getApplicationContext(), this);
         context = this.getApplicationContext();
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity /* implements SensorEventLis
         instance = this;
         final Calendar cal = Calendar.getInstance();
 
-        //datum van notificatie
+
         year = cal.get(Calendar.YEAR);
         month = cal.get(Calendar.MONTH);
         day = cal.get(Calendar.DAY_OF_MONTH);
@@ -71,10 +69,11 @@ public class MainActivity extends AppCompatActivity /* implements SensorEventLis
         addTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent("com.example.joeyd.wakeapp");
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-
+                
                 Calendar cal = Calendar.getInstance();
                 cal.set(Calendar.YEAR, year);
                 cal.set(Calendar.MONTH, month);
@@ -85,6 +84,8 @@ public class MainActivity extends AppCompatActivity /* implements SensorEventLis
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
                 Toast.makeText(MainActivity.this, "Wake up scheduled at " + hour + ":" + minute + " " + day + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
+
+
             }
         });
     }
@@ -141,44 +142,4 @@ public class MainActivity extends AppCompatActivity /* implements SensorEventLis
         return super.onOptionsItemSelected(item);
     }
 
-
-
-    /*AsyncTask getTime = new AsyncTask<Object, String, String>() {
-        @Override
-        protected String doInBackground(Object... params) {
-
-            for (int i = 0; i < 0; i++) {
-                Calendar cal = Calendar.getInstance();
-                int hour = cal.get(Calendar.HOUR_OF_DAY);
-                int minute = cal.get(Calendar.MINUTE);
-                int second = cal.get(Calendar.SECOND);
-                String time = hour + ":" + minute + ":" + second;
-                Log.i("Debug", time);
-                publishProgress(time);
-            }
-            return "5";
-        }
-
-        protected void onProgressUpdate(String... time) {
-            timeTxtView = (TextView)findViewById(R.id.time);
-            timeTxtView.setText(time.toString());
-        }
-
-        protected void onPostExecute(String time) {
-            timeTxtView = (TextView)findViewById(R.id.time);
-            timeTxtView.setText(time);
-        }
-    };
-
-    public void setTime(View v) {
-        Calendar cal = Calendar.getInstance();
-        int hour = cal.get(Calendar.HOUR_OF_DAY);
-        int minute = cal.get(Calendar.MINUTE);
-        int second = cal.get(Calendar.SECOND);
-        String time = hour + ":" + minute + ":" + second;
-        TextView timeTxt = (TextView)findViewById(R.id.time);
-        timeTxt.setText(time);
-
-
-    }*/
 }
