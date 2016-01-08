@@ -74,6 +74,10 @@ public class ContactManagerActivity extends AppCompatActivity {
         Intent intent = new Intent(this,BuddyManagerActivity.class);
         startActivity(intent);
     }
+    public void goToMain(View view){
+        Intent intent = new Intent (this,MainActivity.class);
+        startActivity(intent);
+    }
 
     // Load data on background
     class LoadContact extends AsyncTask<Void, Void, Void> {

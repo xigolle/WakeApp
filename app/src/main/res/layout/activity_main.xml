@@ -43,7 +43,6 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-<<<<<<< HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pick time"
@@ -51,7 +50,22 @@
         android:layout_below="@+id/z"
         android:layout_centerHorizontal="true"
         android:onClick="setTime"/>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buddy List"
+        android:id="@+id/btnbuddyList"
+        android:layout_below="@id/setTime"
+        android:onClick="goToBuddies"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact List"
+        android:id="@+id/btnContactsList"
+        android:layout_below="@id/btnbuddyList"
+        android:onClick="goToContacts"
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +73,6 @@
         android:id="@+id/addTime"
         android:layout_below="@+id/setTime"
         android:layout_centerHorizontal="true" />
-=======
         android:onClick="sendMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,7 +82,6 @@
         android:layout_toLeftOf="@+id/z"
         android:layout_toStartOf="@+id/z"
         android:layout_marginBottom="108dp" />
->>>>>>> Buddy-List
 
 
 </RelativeLayout>

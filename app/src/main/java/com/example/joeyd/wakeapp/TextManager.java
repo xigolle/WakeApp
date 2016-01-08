@@ -22,10 +22,16 @@ import android.widget.Toast;
  */
 public class TextManager extends BroadcastReceiver{
 
+    static String[] codes ={
+            "#Awake",
+            "#WakeMeApp",
+            "#WakeApp"
+    };
     static final SmsManager sms = SmsManager.getDefault();
     static String secretAppCode = "#WakeApp";
-    static String IamAwake = "#Awake";
-    static String WakeUp = "#WakeApp";
+//    static String IamAwake = "#Awake";
+//    static String WakeMeApp = "#WakeMeApp";
+//    static String WakeUp = "#WakeApp";
     private SmsMessage createFromPdu(byte[] pduobj,String format){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return SmsMessage.createFromPdu(pduobj,format);
@@ -35,13 +41,9 @@ public class TextManager extends BroadcastReceiver{
     }
 
 
-    static public  void Send(String number ,String text,Context context,Boolean Awake){
+    static public  void Send(String number ,String text,Context context,int CodeNumber){
         //send SMS to the phone number with specified Text
-        if(Awake){
-            secretAppCode = IamAwake;
-        }else{
-            secretAppCode = WakeUp;
-        }
+        secretAppCode = codes[CodeNumber];
         try{
             sms.sendTextMessage(number, null, text + " " + secretAppCode, null, null);
             Toast toast = Toast.makeText(context,"SMS verstuurd",Toast.LENGTH_SHORT);
@@ -70,12 +72,12 @@ public class TextManager extends BroadcastReceiver{
 
                 //check of de tijd verstreken is nadat de persoon wakker mag worden
                 //check of de persoon al wakker is geworden zo niet Wekken.
-                if(textMessage.toLowerCase().indexOf(WakeUp.toLowerCase()) != -1){
+                if(textMessage.toLowerCase().indexOf(codes[2].toLowerCase()) != -1){
                     //persoon moet gewekt worden
                     am.setStreamVolume(AudioManager.STREAM_MUSIC, am.getStreamMaxVolume(AudioManager.STREAM_MUSIC),0);
                     Toast toast = Toast.makeText(context,"Going to wake you up!",Toast.LENGTH_SHORT);
                     mp.start();
-                }else if(textMessage.toLowerCase().indexOf(IamAwake.toLowerCase()) != -1){
+                }else if(textMessage.toLowerCase().indexOf(codes[0].toLowerCase()) != -1){
                     //persoon is wakker en moet lijst geupdate worden
                     //TODO Check of het nummer in de buddy lijst zit zo ja update dat de persoon wakker is
                 }

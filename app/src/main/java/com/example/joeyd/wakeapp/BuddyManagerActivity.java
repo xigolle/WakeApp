@@ -1,11 +1,15 @@
 package com.example.joeyd.wakeapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,6 +28,10 @@ public class BuddyManagerActivity extends AppCompatActivity {
         Intent intent = new Intent(this,ContactManagerActivity.class);
         startActivity(intent);
     }
+    public void goToMain(View view){
+        Intent intent = new Intent (this,MainActivity.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +43,13 @@ public class BuddyManagerActivity extends AppCompatActivity {
 
         listView.setAdapter(adapter);
         listView.setEmptyView(findViewById(R.id.emptylist));
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                wakeBuddieApp(view,buddyList.get(position).getPhone());
+                Log.e("Clicked", "Clicked on" + buddyList.get(position).getPhone());
+            }
+        });
     }
 
     @Override
@@ -57,5 +72,10 @@ public class BuddyManagerActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void wakeBuddieApp(View view, String number) {
+        Context context = getApplicationContext();
+        TextManager.Send(number, "I am WAking you up", context,2);
     }
 }

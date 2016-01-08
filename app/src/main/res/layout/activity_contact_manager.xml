@@ -11,12 +11,15 @@
         android:layout_height="wrap_content"
         android:background="#5b74a8"
         android:id="@+id/frag">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="buddies"
-            android:onClick="goToBuddies"
+            android:text="Main"
+            android:onClick="goToMain"
+
             />
+
         <TextView
             android:id="@+id/srchHint"
             android:layout_width="wrap_content"
@@ -42,4 +45,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/contacts_list"></ListView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="buddies"
+        android:onClick="goToBuddies"
+        android:layout_above="@+id/contacts_list"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/frag" />
 </RelativeLayout>
